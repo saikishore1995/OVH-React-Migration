@@ -1,0 +1,42 @@
+$success-login-btn: #88bf4c;
+$success-login-btn-border: #85bd47;
+
+.session-expire-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.session-expire-body {
+  background: #212124;
+  padding: 50px 15px 15px;
+  padding-top: 10vh;
+  text-align: center;
+}
+
+.session-expire-header {
+  padding: 15px;
+  margin: auto;
+}
+
+.session-expire-message {
+  color: #178ec0;
+  font-weight: 300 !important;
+  margin-top: 0;
+  font-size: 30px;
+  margin-bottom: 10px;
+
+  &:hover {
+    color: #245269;
+  }
+}
+
+.session-expire-button-container {
+  padding-top: 15px;
+
+  .session-expire-button {
+    margin-top: 15px;
+    background-color: $success-login-btn;
+    border-color: $success-login-btn-border;
+  }
+}

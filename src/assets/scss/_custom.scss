@@ -1,0 +1,150 @@
+// Here you can add other styles
+body {
+  font-size: 14px;
+}
+.icon-roles {
+  display: block;
+  height: 13px;
+  width: 13px;
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: #404040;
+  }
+}
+.info-checkbox {
+  background-color: $info-base;
+}
+.title-sm,
+.form-select {
+  font-size: 14px;
+}
+.form-label {
+  font-weight: $font-weight-bold;
+}
+.btn-ovh {
+  color: $white;
+  padding: 6px 12px;
+  border-radius: 2px;
+  border: 1px solid 2px;
+  font-size: 12px;
+  line-height: 1.42857;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+.btn-download {
+  background-color: $blue-btnBg;
+  border-color: $blue-btnBorder;
+  color: $white;
+  &:hover {
+    color: $white;
+    background-color: $blue-btnHover;
+    border-color: $blue-btnHoverBorder;
+  }
+}
+.form-check-input[type='checkbox'] {
+  border-radius: 0.15em;
+}
+.form-check-input:checked {
+  background-color: $info-base;
+  border-color: $info-base;
+}
+.form-check-input:checked[type='checkbox'] {
+  background-size: 15px;
+}
+.sidebar {
+  --cui-sidebar-width: 16.664%;
+}
+.sidebar:not(.sidebar-end) ~ * {
+  --cui-sidebar-occupy-start: 16.664%;
+}
+.sidebar-narrow-unfoldable:not(.sidebar-end) ~ * {
+  --cui-sidebar-occupy-start: 4rem;
+}
+html:not([dir='rtl']) .wrapper {
+  padding-left: 0;
+  // padding-left: var(--cui-sidebar-occupy-start, 0);
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+thead.table-primary td {
+  background-color: $primary;
+  color: $white;
+}
+dd {
+  margin-bottom: 0;
+}
+
+.myprofile-wrapper {
+  .card-header {
+    h4 {
+      color: $primary;
+      font-weight: normal;
+    }
+  }
+}
+.header-nav .nav-link {
+  color: $white;
+}
+.inline-tabs-nav {
+  &.nav {
+    &.nav-tabs {
+      justify-content: flex-end;
+      padding-right: 35px;
+      padding-left: 35px;
+      @include media-breakpoint-down(md) {
+        padding-right: 20px;
+        padding-left: 20px;
+        align-items: flex-start;
+        min-height: 60px;
+        justify-content: flex-start;
+        // height: 30px;
+      }
+    }
+  }
+  .nav-item {
+    @include media-breakpoint-down(md) {
+      padding: 0 0 5px 0;
+    }
+  }
+  .nav-link {
+    height: 30px;
+    @include media-breakpoint-down(md) {
+      margin-top: 0 !important;
+    }
+    &.active {
+      @include media-breakpoint-down(md) {
+        border: 1px solid #458fd2;
+        border-bottom-color: #458fd2 !important;
+        height: 30px !important;
+      }
+    }
+  }
+}
+.table-striped > thead > tr:nth-of-type(even) > * {
+  background-color: $white;
+}
+input.form-control,
+select.form-select {
+  height: 34px;
+}
+.title-sm,
+.form-select {
+  font-size: 12px;
+}
+.table > :not(caption) > * > * {
+  color: #404040;
+}
+th {
+  font-weight: bold;
+}
+
+.form-control {
+  font-size: 12px;
+}
+
+.w-10 {
+  width: 10;
+}
+

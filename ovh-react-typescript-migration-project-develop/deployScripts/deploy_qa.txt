@@ -1,0 +1,5 @@
+cd /opt/wildfly-8.0.0.Final/standalone/deployments
+
+mput -r target/ROOT.war
+
+quit

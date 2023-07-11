@@ -1,0 +1,79 @@
+.sh-timeline{
+    &-container{
+        margin: 30px auto;
+    }
+    &-card{
+        display: flex;
+        flex-flow: row wrap;
+        position: relative;
+        align-items: flex-start;
+        margin-bottom: 50px;
+        z-index: 1;
+        &:before{
+            content: '';
+            display: block;
+            width: 2px;
+            height: 100%;
+            background-color: #a9a9a9;
+            position: absolute;
+            left: 49px;
+            top: 50px;
+            z-index: -1;
+
+        }
+        &:last-child{
+            &:after{
+                content: '';
+                display: block;
+                width: 10px;
+                height: 10px;
+                background-color: #a9a9a9;
+                border-radius: 50%;
+                position: absolute;
+                left: 45px;
+                bottom: -50px;
+            }
+        }
+    }
+    &-timestamp{
+        background-color: $success;
+        padding: 10px;
+        width: 100px;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: $white;
+        align-items: flex-start;
+    }
+    &-content{
+        width: calc(100% - 100px);
+        border: 1px solid #dcdcdc;
+        border-radius: 2px;
+        padding: 10px;
+        position: relative;
+        &:before{
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: 0;
+            top: 0;
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+            border-right: 7px solid #fff;
+            margin: 15px 0 0 -7px;
+        }
+    }
+    &-title,&-status{
+        float: left;
+    }
+    &-status{
+        .badge{
+            padding: 5px 10px;
+            font-size: 100%;
+            color: $white;
+            font-weight: 400;
+            margin-left: 8px;
+        }
+    }
+}

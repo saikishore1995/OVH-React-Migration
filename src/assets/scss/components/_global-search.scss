@@ -1,0 +1,34 @@
+.global-search {
+  input.form-control {
+    min-width: 245px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    font-size: 0.75rem;
+    color: $gray-900;
+    &:focus{
+      box-shadow: none;
+    }
+  }
+  .btn-info {
+    background-color: #3f8bd1;
+    border-color: #3988cf;
+    color: #fff;
+    padding: 4px 14px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    font-size: 0.75rem;
+    &:hover {
+      background-color: #3183cc;
+      border-color: #2f7dc4;
+    }
+    &:active:focus{
+      box-shadow: none;
+    }
+  }
+}
+input::-webkit-input-placeholder,
+input::-moz-placeholder,
+input::-ms-input-placeholder {
+  font-size: 0.75rem;
+  color: $gray-900;
+}

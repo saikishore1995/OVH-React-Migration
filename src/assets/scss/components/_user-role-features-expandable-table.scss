@@ -1,0 +1,55 @@
+.expandable-table {
+  &-headwrap {
+    margin-bottom: 5px;
+    span {
+      font-size: 14px;
+      font-weight: 700;
+      &:last-child {
+        margin-left: 154px;
+      }
+    }
+  }
+  &-title {
+    margin-left: 180px;
+  }
+  .accordion {
+    &-item {
+      &:first-child {
+        .accordion-header {
+          border-top: 1px solid #dadadd;
+        }
+      }
+    }
+    &-body {
+      padding: 8px;
+    }
+    &-button {
+      color: $gray-900;
+      font-family: $font-family-base;
+      font-size: $font-size-base;
+      background-color: $light-dark;
+      padding: 8px;
+      &::before,
+      &:not(.collapsed)::before {
+        font-family: 'FontAwesome';
+        font-size: 14px;
+      }
+      &::before {
+        content: '\f055';
+      }
+      &:not(.collapsed)::before {
+        content: '\f056';
+      }
+      &::after,
+      &:not(.collapsed)::after {
+        display: none;
+      }
+    }
+  }
+  .table-info {
+    th {
+      background-color: $info-base;
+      color: $white;
+    }
+  }
+}

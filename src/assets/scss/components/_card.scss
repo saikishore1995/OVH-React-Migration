@@ -1,0 +1,49 @@
+// Cards
+.card {
+  padding-left: $spacer;
+  padding-right: $spacer;
+  overflow: hidden;
+  &.bg-danger,
+  &.bg-success {
+    padding-left: 0;
+    padding-right: 0;
+    .card-footer {
+      border-top-color: $white;
+    }
+  }
+  .card-header {
+    background-color: $white;
+    border-bottom: 1px solid $primary-base;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    color: $gray-900;
+    font-weight: 700;
+    &.bg-primary {
+      background-color: $primary-50 !important;
+      border-color: transparent;
+      color: $white;
+      margin: 0 -1rem;
+      width: calc(100% + 2rem);
+      h4 {
+        color: inherit;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+    .h4 {
+      padding: $spacer - 0.4rem 0 $spacer - 0.6rem;
+      margin-bottom: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .card-footer {
+    background-color: transparent;
+    a {
+      text-decoration: none;
+    }
+  }
+}

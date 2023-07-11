@@ -1,0 +1,25 @@
+.user-profile {
+  &-wrap {
+    margin: 0 auto;
+    text-align: center;
+  }
+  &-img {
+    margin: 12px auto 8px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+  }
+  &-text {
+    h4 {
+      margin-bottom: 5px;
+    }
+    h5 {
+      margin-bottom: 10px;
+      font-size: 0.875rem;
+    }
+  }
+  &-name,
+  &-designation {
+    color: $white;
+  }
+}

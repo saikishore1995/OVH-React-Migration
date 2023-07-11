@@ -1,0 +1,79 @@
+stages:
+  - build
+  - test
+  - sonarqube
+  - deployqa
+  
+build project:
+  image: node:16
+  stage: build
+  script:
+    - echo "building react project"
+    - mvn package
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - target
+  only:
+    refs:
+      - merge_requests
+    variables:
+      - $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "develop" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "qa" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"
+
+test project:
+  image: node:16
+  cache:
+    key: ovh-react-typescript-migration
+    paths:
+      - node_modules/
+  before_script:
+    - npm ci
+  stage: test
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  script:
+    - echo "running react test suite"
+    - npm run test:cov
+  artifacts:
+    when: always
+    reports:
+      cobertura: coverage/cobertura-coverage.xml
+    paths:
+      - coverage
+  only:
+    refs:
+      - merge_requests
+    variables:
+      - $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "develop" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "qa" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"
+
+sonarqube check:
+  image: node:16
+  cache:
+    key: ovh-react-typescript-migration
+    paths:
+      - node_modules/
+  before_script:
+    - npm ci
+  stage: sonarqube
+  script:
+    - dir
+    - echo "Starting sonar analysis"
+    - cmd.exe /C "sonar-scanner -X -Dsonar.projectKey=ovh-typescript-react-migration -Dsonar.projectName=OVHTypeScriptReactMigration -Dsonar.sources=src -Dsonar.qualitygate.wait=true -Dsonar.typescript.lcov.reportPaths=coverage/lcov.info"
+  allow_failure: false
+  only:
+    refs:
+      - merge_requests
+    variables:
+      - $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "develop" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "qa" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"
+
+deploy qa:
+  stage: deployqa
+  script:
+    - echo "Creating a war file"
+    - mvn package
+    - echo "Deploying to qa environment"
+    - cmd.exe /C "echo n | psftp $QA_DEPLOY_USER@$QA_DEPLOY_HOST -pw $QA_DEPLOY_PASSWORD -P 22 -b deployScripts/deploy_qa.txt"
+  environment:
+    name: QA
+    url: https://ovhqa.raybiztech.com
+  only:
+    - qa

@@ -1,0 +1,31 @@
+import { EmployeeGeneralInformation } from '../../types/MyProfile/GeneralTab/generalInformationTypes'
+
+export const mockGeneralInformationData: EmployeeGeneralInformation = {
+  id: 1982,
+  baseLocation: 'Hyderabad',
+  bloodgroup: 'O+',
+  departmentName: 'Development',
+  designation: 'Associate Software Engineer',
+  emailId: 'test@raytech.com',
+  anniversary: '19 Oct 2021',
+  curentLocation: 'Hyderabad city',
+  country: 'INDIA',
+  employmentTypeName: 'Permanent',
+  address: 'Andhra Pradesh',
+  emergencyContact: '7070707070',
+  fullName: 'Raj Kumar',
+  gender: 'male',
+  jobTypeName: 'Full time',
+  maritalStatus: 'single',
+  officialBirthday: '01 Jan 2010',
+  thumbPicture: '../profilepics/Default_Male.jpg',
+  personalEmail: 'test@gmail.com',
+  realBirthday: '30 Jun 2009',
+  projectManager: 'Sunny Manesh Kumar',
+  empManager: 'Sunny Manesh Kumar Eagala',
+  rbtCvPath:
+    '/opt/wildfly-8.0.0.Final/standalone/deployments/hrm-ui.war/RBTCV/1982RBTCV.doc',
+  aboutMe: 'Working as an software engineer',
+  skypeId: 'raj.liv.43nfh.8isfa66',
+  rbtCvName: '1982RBTCV.doc',
+}

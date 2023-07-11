@@ -1,0 +1,50 @@
+body {
+  color: $gray-900;
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+}
+
+.heading {
+  color: $primary;
+  font-weight: $font-weight-normal;
+  margin-top: 0;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: $font-size-base + 1;
+  color: $gray-900;
+}
+
+h4 {
+  margin-top: 0;
+  font-size: $font-size-base + 0.125rem;
+  color: $gray-900;
+}
+h5 {
+  margin-top: 0;
+  font-size: $font-size-sm;
+  color: $gray-900;
+}
+h6 {
+  margin-top: 0;
+  font-size: 12px;
+  color: inherit;
+  color: $gray-900;
+  @include media-breakpoint-up(sm) {
+    font-size: 13px;
+  }
+}
+
+// circle
+.circle {
+  border-radius: 50%;
+}
+.max-w-100 {
+  max-width: 100%;
+}
+
+.bg-primary-75,thead.table-primary td 
+  {
+  background-color: $primary-75;
+}

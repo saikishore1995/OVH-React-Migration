@@ -1,0 +1,33 @@
+.btn-modal-close{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: none;
+  font-size: small;
+}
+.modal {
+  .modal-dialog {
+    .modal-content {
+      .modal-body {
+        margin-top: 20px;
+        
+        .form-label {
+          font-size: 13px;
+          font-weight: $font-weight-normal;
+          color: $gray-900;
+        }
+        .row {
+          .form-check-input {
+            position: absolute;
+            left: 140px;
+            top: 85px;
+          }
+        }
+      }
+      .modal-footer {
+        padding: 6px 15px;
+        background-color: $gray-100;
+      }
+    }
+  }
+}

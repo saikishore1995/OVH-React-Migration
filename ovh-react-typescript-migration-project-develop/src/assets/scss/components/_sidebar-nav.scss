@@ -1,0 +1,115 @@
+.main {
+  &-sidebar {
+    background-color: $primary-75;
+    &.sidebar {
+      &.sidebar-fixed {
+        position: static;
+      }
+      &.sidebar-narrow-unfoldable {
+        &:hover {
+          width: 4rem;
+        }
+      }
+    }
+    .sidebar-nav .nav-link,
+    .sidebar-nav .nav-group.show .nav-group-toggle {
+      color: $white;
+    }
+    .sidebar-nav .nav-group.show {
+      background-color: $primary-75;
+    }
+    .sidebar-nav .nav-group.show > a.nav-link.nav-group-toggle,
+    .sidebar-nav .nav-link:hover,
+    .sidebar-nav .nav-link.active {
+      background: $primary-navHover;
+      color: $white;
+    }
+    .sidebar-nav .nav-link,
+    .sidebar-nav .nav-link.active {
+      padding: 0.625rem;
+    }
+    .sidebar-nav .nav-link:hover.nav-group-toggle::after,
+    .sidebar-nav .nav-group-toggle::after {
+      // transform: rotate(-90deg);
+      background-image: none;
+      content: '\f054';
+      font-family: 'FontAwesome';
+      font-size: 12px;
+    }
+    .sidebar-nav .nav-group.show > .nav-group-toggle::after {
+      transform: rotate(0deg);
+      background-image: none;
+      content: '\f078';
+      font-family: 'FontAwesome';
+      font-size: 12px;
+    }
+    .sidebar-nav .nav-group-items .nav-link {
+      position: relative;
+    }
+    .sidebar-nav .nav-group-items .nav-link:before {
+      display: block;
+      flex: 0 1 12px;
+      height: 12px;
+      content: '\f054';
+      font-family: 'FontAwesome';
+      position: absolute;
+      left: 40px;
+      top: 12px;
+      font-size: 10px;
+    }
+    .sidebar-brand {
+      a {
+        height: 40px;
+        margin: 6px auto;
+      }
+    }
+    .sidebar-nav .nav-icon {
+      flex-basis: 3rem;
+      color: $white;
+
+      .fa-lg {
+        font-size: 0.875em;
+      }
+    }
+  }
+  &-header {
+    background-color: $primary-75;
+    min-height: auto;
+    padding: 0.095rem 0;
+    .header-toggler {
+      color: $white;
+    }
+    .dropdown-menu {
+      min-width: auto;
+      font-size: 0.75rem;
+    }
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+      background-color: $primary;
+      color: $white;
+    }
+    .header-nav .nav-link:hover,
+    .header-nav .nav-link:focus {
+      background: #2d76b5;
+      color: $white;
+    }
+  }
+  &-footer {
+    // background-color: $primary-base;
+    color: $white;
+    justify-content: center;
+    // min-height: auto;
+    padding: 0.3em 1em;
+    border: none;
+  }
+  &-logo {
+    background-color: $white;
+    flex: 0 0 3.2rem;
+    img {
+      width: 100%;
+    }
+  }
+}
+html:not([dir='rtl']) .sidebar-nav .nav-icon:first-child {
+  margin-top: -14px;
+}

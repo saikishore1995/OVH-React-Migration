@@ -1,0 +1,40 @@
+// Roboto fonts from google fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// If you want to override variables do it here
+@import 'variables';
+
+$enable-ltr: true; /* stylelint-disable-line scss/dollar-variable-default */
+$enable-rtl: true; /* stylelint-disable-line scss/dollar-variable-default */
+
+// Import styles
+@import '@coreui/coreui-pro/scss/coreui';
+@import '@coreui/coreui-pro/scss/themes/dark';
+@import 'react-datepicker/dist/react-datepicker.css';
+@import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+@import 'cropperjs/dist/cropper.css';
+@import 'layout';
+
+// If you want to add custom CSS you can put it here.
+@import 'simplebar/dist/simplebar.min.css';
+@import 'custom';
+@import 'base';
+@import './components/sidebar-nav';
+@import './components/card';
+@import './components/global-search';
+@import './components/idle-modal';
+@import './components/session-timeout';
+@import './components/inline-tabs-nav';
+@import './pages/login';
+@import './pages/qualifications-tab';
+@import './components/richtexteditor';
+@import './components/omodal';
+@import './components/user-role-features-expandable-table';
+@import './pages/myprofile/profilehistory/profilehistory';
+@import './pages/myprofile/basicinfo/basicinfo';
+@import './pages/myprofile/projectstab/projectstab';
+@import './components/user-profile';
+@import './components/employee-list';
+@import './pages/employeedirectory/employeeslist/addnewemployee/shiftconfiguration/shift-configuration';
+@import './components/category-list';
+@import './pages/employeedirectory/visalist/visa-list';
